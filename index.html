@@ -33,7 +33,7 @@
         <a href="#aplicaciones">Aplicaciones</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#clientes">Para quién es</a>
-        <a href="#contacto" class="nav-cta">Cotizar por WhatsApp</a>
+        <a href="#contacto" class="nav-cta">Cotiza tu projecto</a>
       </nav>
 
       <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
@@ -342,7 +342,7 @@
           </div>
         </div>
 
-        <form class="contact-form reveal" id="contact-form">
+        <form class="contact-form reveal" id="contact-form" data-use-whatsapp="true">
           <div class="form-row">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" required autocomplete="name" />
@@ -387,58 +387,6 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
-      e.preventDefault(); // Evita que la página se recargue
-
-      const form = e.target;
-      const btnSubmit = document.getElementById('btn-submit');
-      const formNote = document.getElementById('form-note');
-
-      // 1. Deshabilitar botón y cambiar texto para feedback visual
-      btnSubmit.disabled = true;
-      btnSubmit.textContent = 'Enviando...';
-      formNote.textContent = '';
-
-      // 2. Capturar los datos del formulario
-      const formData = new FormData(form);
-
-      // REEMPLAZA ESTA URL POR LA URL REAL QUE TE DIO GOOGLE APPS SCRIPT
-      const urlScript = 'https://script.google.com/macros/s/AKfycbwLxMCeKItmE14_Y0z5gjYfLeXocxhbgi9ZSucjYd60cjNs-_KnEGysreSn4C_-IwvUUQ/exec';
-
-      // Convertir datos a parámetros de URL legibles para Google
-      const urlParams = new URLSearchParams(formData).toString();
-
-      // 3. Enviar datos en segundo plano
-      fetch(urlScript + '?' + urlParams, {
-        method: 'POST'
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.result === 'success') {
-            // Éxito: Mensaje verde, limpiar formulario y restaurar botón
-            formNote.style.color = 'green';
-            formNote.textContent = '¡Gracias! Tu mensaje ha sido enviado con éxito y guardado.';
-            form.reset();
-          } else {
-            // Error controlado desde el servidor
-            formNote.style.color = 'red';
-            formNote.textContent = 'Hubo un problema en el servidor. Inténtalo de nuevo.';
-          }
-        })
-        .catch(error => {
-          // Error de conexión a internet o bloqueo
-          console.error('Error:', error);
-          formNote.style.color = 'red';
-          formNote.textContent = 'Error de conexión. Revisa tu internet e inténtalo de nuevo.';
-        })
-        .finally(() => {
-          // Re-habilitar el botón pase lo que pase
-          btnSubmit.disabled = false;
-          btnSubmit.textContent = 'Enviar Mensaje';
-        });
-    });
-  </script>
 </body>
 
 </html>
