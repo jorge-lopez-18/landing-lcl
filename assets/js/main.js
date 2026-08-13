@@ -69,11 +69,15 @@ function initContactForm() {
 
     const nombre = form.nombre.value.trim();
     const empresa = form.empresa.value.trim();
+    const celular = form.celular ? form.celular.value.trim() : "";
+    const email = form.email ? form.email.value.trim() : "";
     const servicio = form.servicio ? form.servicio.value : "";
     const mensaje = form.mensaje.value.trim();
 
     const lines = [
       `Hola, soy ${nombre}${empresa ? " de " + empresa : ""}.`,
+      celular ? `Celular: ${celular}.` : null,
+      email ? `Email: ${email}.` : null,
       servicio ? `Me interesa: ${servicio}.` : null,
       mensaje ? mensaje : "Quisiera más información / una cotización.",
     ].filter(Boolean);
