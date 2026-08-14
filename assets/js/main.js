@@ -83,7 +83,7 @@ function initContactForm() {
     ].filter(Boolean);
 
     // URL del Google Apps Script que procesa y envía el correo
-    const urlScript = 'https://script.google.com/macros/s/AKfycbwLxMCeKItmE14_Y0z5gjYfLeXocxhbgi9ZSucjYd60cjNs-_KnEGysreSn4C_-IwvUUQ/exec';
+    const urlScript = 'https://script.google.com/macros/s/AKfycbzA6UgjUJsTE4XOmDQ4RvjtsWvyBaugC0kFIToDDd1zTmaa1Gce5ARol1mIJaeqQkF-/exec';
 
     const formData = new FormData(form);
     const urlParams = new URLSearchParams(formData).toString();
