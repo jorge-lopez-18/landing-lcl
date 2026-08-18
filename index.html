@@ -15,8 +15,10 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap"
     rel="stylesheet">
   <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,-50..200&display=block"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,-50..200&display=swap"
     rel="stylesheet">
+  <!-- Preload likely-LCP image to improve LCP timing -->
+  <link rel="preload" as="image" href="assets/images/lcl-placa-recepcion-marmol-1002w.webp">
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
@@ -24,7 +26,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#top" class="brand">
-        <img src="assets/images/logo.png" alt="LCL Soluciones — Corte y Grabado" class="brand-logo" />
+        <img src="assets/images/logo.png" alt="LCL Soluciones — Corte y Grabado" class="brand-logo" width="267" height="80" decoding="async" loading="eager" />
       </a>
 
       <nav class="main-nav" id="main-nav">
@@ -65,8 +67,12 @@
 
         <div class="hero-visual reveal">
           <div class="hero-visual-frame">
-            <img src="assets/images/lcl-placa-recepcion-marmol.jpeg"
-              alt="Logo de precisión fabricada para lobby de una compania inmobiliaria" />
+            <picture>
+              <source type="image/webp" srcset="assets/images/lcl-placa-recepcion-marmol-1002w.webp 1002w, assets/images/lcl-placa-recepcion-marmol-768w.webp 768w, assets/images/lcl-placa-recepcion-marmol-480w.webp 480w" sizes="(min-width: 900px) 1002px, 100vw">
+              <img src="assets/images/lcl-placa-recepcion-marmol-1002w.webp"
+                alt="Logo de precisión fabricada para lobby de una compania inmobiliaria"
+                width="1002" height="546" loading="eager" fetchpriority="high" decoding="async" />
+            </picture>
           </div>
         </div>
       </div>
@@ -80,8 +86,8 @@
           <span class="stat-label">tecnología propia, sin intermediarios</span>
         </div>
         <div class="stat">
-          <span class="stat-number">1 a 1,000+</span>
-          <span class="stat-label">de pieza única a producción en volumen</span>
+          <span class="stat-number">12 a 1,000+</span>
+          <span class="stat-label">piezas de fabricación y venta al por mayor</span>
         </div>
         <div class="stat">
           <span class="stat-number">Mazatlán, Sin.</span>
@@ -181,8 +187,10 @@
             </ul>
           </div>
           <div class="materiales-visual reveal">
-            <img src="assets/images/machine.jpg"
-              alt="Máquina de corte láser y CNC de LCL Soluciones trabajando con precisión" loading="lazy" />
+            <picture>
+              <source type="image/webp" srcset="assets/images/machine-1200w.webp 1200w, assets/images/machine-800w.webp 800w, assets/images/machine-480w.webp 480w" sizes="(min-width: 900px) 800px, 100vw">
+              <img src="assets/images/machine-800w.webp" alt="Máquina de corte láser y CNC de LCL Soluciones trabajando con precisión" loading="lazy" width="800" height="534" />
+            </picture>
           </div>
         </div>
       </div>
@@ -201,7 +209,7 @@
         <div class="aplicaciones-grid">
           <div class="aplicacion-card reveal">
             <div class="aplicacion-media">
-              <img src="assets/images/lcl-tabla-servir-madera-grabada.jpeg"
+              <img src="assets/images/lcl-tabla-servir-madera-grabada.webp"
                 alt="Tabla de madera cortada y grabada a láser, ejemplo de marcado industrial de precisión"
                 loading="lazy" />
             </div>
@@ -211,7 +219,7 @@
           </div>
           <div class="aplicacion-card reveal">
             <div class="aplicacion-media">
-              <img src="assets/images/lcl-senalizacion-jardin-grabada.jpeg"
+              <img src="assets/images/lcl-senalizacion-jardin-grabada.webp"
                 alt="Señalización grabada en material oscuro para exteriores y jardines" loading="lazy" />
             </div>
             <h3>Señalización</h3>
@@ -220,7 +228,7 @@
           </div>
           <div class="aplicacion-card reveal">
             <div class="aplicacion-media">
-              <img src="assets/images/lcl-llaveros-grabados-flotas.jpeg"
+              <img src="assets/images/lcl-llaveros-grabados-flotas.webp"
                 alt="Llaveros de acrílico grabados a láser para identificación de flotas vehiculares" loading="lazy" />
             </div>
             <h3>Llaveros y control de flotas</h3>
@@ -228,7 +236,7 @@
           </div>
           <div class="aplicacion-card reveal">
             <div class="aplicacion-media">
-              <img src="assets/images/lcl-reconocimiento-corporativo-acrilico.jpeg"
+              <img src="assets/images/lcl-reconocimiento-corporativo-acrilico.webp"
                 alt="Reconocimiento corporativo en acrílico grabado con base de madera, ejemplo de fabricación LCL Soluciones"
                 loading="lazy" />
             </div>
@@ -237,7 +245,7 @@
           </div>
           <div class="aplicacion-card reveal">
             <div class="aplicacion-media">
-              <img src="assets/images/lcl-letras-corporeas-madera-dorado.jpeg"
+              <img src="assets/images/lcl-letras-corporeas-madera-dorado.webp"
                 alt="Letras corporativas en madera con acabado dorado para recepción" loading="lazy" />
             </div>
             <h3>Letras corporativas</h3>
@@ -245,7 +253,7 @@
           </div>
           <div class="aplicacion-card reveal">
             <div class="aplicacion-media">
-              <img src="assets/images/lcl-maqueta-arquitectonica-corte-laser.jpeg"
+              <img src="assets/images/lcl-maqueta-arquitectonica-corte-laser.webp"
                 alt="Maqueta arquitectónica de corte láser de precisión, ejemplo de fabricación LCL Soluciones"
                 loading="lazy" />
             </div>
@@ -293,8 +301,10 @@
         </div>
         <div class="clientes-layout">
           <div class="clientes-visual reveal">
-            <img src="assets/images/arc.jpg"
-              alt="Arquitecto revisando planos de un proyecto que requiere piezas de precisión" loading="lazy" />
+            <picture>
+              <source type="image/webp" srcset="assets/images/arc-1200w.webp 1200w, assets/images/arc-800w.webp 800w, assets/images/arc-480w.webp 480w" sizes="(min-width: 900px) 800px, 100vw">
+              <img src="assets/images/arc-800w.webp" alt="Arquitecto revisando planos de un proyecto que requiere piezas de precisión" loading="lazy" width="800" height="500" />
+            </picture>
           </div>
           <div class="clientes-copy reveal">
             <p>Trabajamos con arquitectos, interioristas, carpinterías y diseñadores industriales que necesitan piezas
@@ -329,9 +339,9 @@
 
           <div class="contact-info-list">
             <div class="contact-info-item">
-              <span class="contact-info-icon" aria-hidden="true">💬</span>
-              <a href="https://wa.me/526692541294" target="_blank" rel="noopener">669 254 1294 (WhatsApp)</a>
-            </div>
+                  <span class="contact-info-icon" aria-hidden="true">💬</span>
+                  <a href="https://wa.me/526692541294" target="_blank" rel="noopener">669 254 1294 (WhatsApp)</a>
+                </div>
             <div class="contact-info-item">
               <span class="contact-info-icon" aria-hidden="true">✉️</span>
               <a href="mailto:ventas@lclsoluciones.com">ventas@lclsoluciones.com</a>
@@ -345,24 +355,24 @@
 
         <form class="contact-form reveal" id="contact-form" data-use-whatsapp="true">
           <div class="form-row">
-            <label for="nombre">Nombre</label>
+            <label for="nombre">Nombre *</label>
             <input type="text" id="nombre" name="nombre" required autocomplete="name" />
           </div>
           <div class="form-row">
-            <label for="empresa">Empresa (opcional)</label>
+            <label for="empresa">Empresa *</label>
             <input type="text" id="empresa" name="empresa" autocomplete="organization" />
           </div>
           <div class="form-row">
-            <label for="celular">Celular</label>
-            <input type="tel" id="celular" name="celular" inputmode="tel" pattern="[0-9+\- \(\)]*" placeholder="669 254 1294" />
+            <label for="celular">Celular *</label>
+            <input type="tel" id="celular" required name="celular" inputmode="tel" pattern="[0-9+\- \(\)]*" placeholder="669 254 1294" />
           </div>
           <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required autocomplete="email" />
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email" required />
           </div>
           <div class="form-row">
-            <label for="servicio">Servicio de interés</label>
-            <select id="servicio" name="servicio">
+            <label for="servicio">Servicio de interés *</label>
+            <select id="servicio" name="servicio" required>
               <option value="Corte Láser">Corte Láser</option>
               <option value="Grabado Láser">Grabado Láser</option>
               <option value="Diseño para Manufactura">Diseño para Manufactura</option>
@@ -385,7 +395,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="assets/images/logo-blanco.png" alt="LCL Soluciones" />
+        <img src="assets/images/logo-blanco.png" alt="LCL Soluciones" width="106" height="64" decoding="async" loading="lazy" />
       </div>
       <p class="footer-copy">© <span id="year"></span> LCL Soluciones — Corte y Grabado. Mazatlán, Sinaloa.</p>
       <div class="footer-links">
@@ -395,7 +405,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>
